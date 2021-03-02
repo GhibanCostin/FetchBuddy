@@ -1,0 +1,229 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #002d5b;
+    text-decoration: none;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #F7F4C4;
+    animation-name: backgr;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.header {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    font-family: Allerta, sans-serif;
+}
+
+#username {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    left: 10%;
+    font-size: calc(12px + .5vmin);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#header-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    font-size: calc(16px + .5vmin);
+}
+
+#change_theme_btn {
+    width: 7%;
+    height: auto;
+    position: absolute;
+    top: 3.6%;
+    left: 90%;
+    transform: translate(-90%, -3.5%);
+    cursor: pointer;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 2px;
+}
+
+#change_theme_btn:before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+#change_theme_btn:hover:before {
+    animation: animate .45s linear forwards;
+}
+
+@keyframes animate {
+    0% {
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+    }
+    100% {
+        width: 100%;
+        height: 0;
+        border-top-color: #002d5b;
+    }
+}
+
+#change_theme_btn:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+#change_theme_btn:hover:after {
+    animation: animate1 .45s linear forwards;
+}
+
+@keyframes animate1 {
+    0% {
+        width: 0;
+        height: 100%;
+        border-bottom-color: transparent;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-bottom-color: #002d5b;
+    }
+}
+
+.footer {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    font-family: Allerta, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section>.section {
+    top: 10%;
+    height: 80%;
+}
+
+.wrapper {
+    height: 60%;
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.button {
+    background-color: transparent;
+    border: 2px solid #002d5b;
+    border-radius: 10%;
+    width: 25%;
+    height: 35%;
+    text-align: center;
+    /* font-size: 40px;     fallback*/
+    font-size: calc(12px + 2.5vw);
+    position: absolute;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.button:hover {
+    background-color: #002d5b;
+    color: #FFFFF0;
+}
+
+#bt1 {
+    left: 37.5%;
+}
+
+#bt2 {
+    float: right;
+    right: 10%;
+}
+
+.button>a {
+    text-decoration: none;
+}
+
+@keyframes backgr {
+    0% {
+        background-color: #F7F4C4
+    }
+    50% {
+        background-color: #dbf0fd
+    }
+    100% {
+        background-color: #FED0D0
+    }
+}
+
+@media all and (max-width: 720px) {
+    .button {
+        width: 75%;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    #bt1,
+    #bt2 {
+        float: none;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #header-title {
+        font-size: calc(9px + .5vmin);
+    }
+}
+
+#file-input {
+    position: absolute;
+    top: 20%;
+    left: 42.5%;
+}
+
+#buddy {
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    top: 10%;
+    text-align: center;
+    cursor: default;
+    font-size: calc(19px + .5vmin);
+}
